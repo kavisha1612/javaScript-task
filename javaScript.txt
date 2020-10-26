@@ -1,0 +1,190 @@
+Ques1-How can you create an object in javascript?
+Ans.1. Creating objects using object literal syntax.Literals are smaller and simpler ways to define objects.We simple define the property and values inside curly braces as shown below:
+let car = { 
+    name : 'GT', 
+    maker : 'BMW', 
+    engine : '1998cc'
+}; 
+2. Creating objects using the ‘new’ keyword-
+Constructor is nothing but a function and with help of new keyword, constructor function allows to create multiple objects of same flavor as shown below:
+function vehicle(name,maker,engine){ 
+    this.name = name; 
+    this.maker = maker; 
+    this.engine = engine; 
+} 
+//new keyword to create an object 
+let car  = new vehicle('GT','BMW','1998cc'); 
+3.Using Object.create() to create new objects-
+Example-The Object.create() method creates a new object, using an existing object as the prototype of the newly created object.
+const coder = { 
+    isStudying : false, 
+    printIntroduction : function(){ 
+        console.log(`My name is ${this.name}. Am I studying?: ${this.isStudying}`); 
+    } 
+}; 
+const me = Object.create(coder); 
+me.name = 'Mukul'; 
+me.isStudying = true; 
+me.printIntroduction();
+
+Ques2- How can you create an Array in javaScript?
+In JavaScript, array is a single variable that is used to store different elements. It is often used when we want to store list of elements and access them by a single variable. Unlike most languages where array is a reference to the multiple variable, in JavaScript array is a single variable that stores multiple elements.
+
+There are basically two ways to declare an array.
+Example:
+
+var House = [ ]; // method 1
+var House = new array(); // method 2
+
+Ques3-How to create a cookie using JavaScript?
+Ans.In JavaScript, we can create, read, update and delete a cookie by using document.cookie property.Cookies are a plain text data record of 5 variable-length fields −
+
+Expires − The date the cookie will expire. If this is blank, the cookie will expire when the visitor quits the browser.
+
+Domain − The domain name of your site.
+
+Path − The path to the directory or web page that set the cookie. This may be blank if you want to retrieve the cookie from any directory or page.
+
+Secure − If this field contains the word "secure", then the cookie may only be retrieved with a secure server. If this field is blank, no such restriction exists.
+
+Name=Value − Cookies are set and retrieved in the form of key-value pairs
+The following syntax is used to create a cookie:
+
+document.cookie="name=value";  
+
+Ques4-What is the difference between Local storage& Session storage with example?
+Ans.Local storage: It keeps store the user information data without expiration date this data will not be deleted when user closed the browser windows it will be available for day, week, month and year.
+
+In Local storage can store 5-10mb offline data.
+
+//Set the value in a local storage object
+localStorage.setItem('name', myName);
+
+//Get the value from storage object
+localStorage.getItem('name');
+
+//Delete the value from local storage object
+localStorage.removeItem(name);//Delete specifice obeject from local storege
+localStorage.clear();//Delete all from local storege
+Session Storage: It is same like local storage date except it will delete all windows when browser windows closed by a web user.
+
+In Session storage can store upto 5 mb data
+
+//set the value to a object in session storege
+sessionStorage.myNameInSession = "Krishna";
+
+Ques6-What will be the output of the code below?
+
+var Y = 1;
+if (function F(0)
+{
+y += Typeof F:</span>
+}
+console.log(y);
+Ans-The output would be 1undefined. 
+The if condition statement evaluates using eval, so eval(function f(){}) returns function f(){} (which is true).
+Therefore, inside the if statement, executing typeof f returns undefined because the if statement code executes at run time,
+and the statement inside the if condition is evaluated during run time.
+
+Ques7-What is the difference between call and apply with example?
+Ans-call() Method: It calls the method, taking the owner object as argument. 
+The keyword this refers to the ‘owner’ of the function or the object it belongs to. 
+We can call a method which can be used on different objects.
+
+Syntax:
+
+object.objectMethod.call( objectInstance, arguments )
+
+apply() Method: The apply() method is used to write methods,which can be used on different objects. 
+It is different from the function call() because it takes arguments as an array.
+Syntax:
+
+object.objectMethod.apply(objectInstance, arrayOfArguments)
+
+Ques8-How to empty an Array in JavaScript?
+Ans-1) Assigning it to a new empty array
+Example-let b = a;
+a = [];
+console.log(b);
+
+2) Setting its length to zero
+Example-a.length = 0;
+
+3) Using splice() method
+Example-a.splice(0,a.length);
+
+4)) Using pop() method
+Example-while(a.length > 0) {
+    a.pop();
+}
+
+
+Ques9-What will be the output of the following code? 
+var Output = (function(x)
+{
+Delete X:
+
+return X;
+}
+(0);
+
+console.log(output);
+
+Ans-The output would be 0.
+The delete operator is used to delete properties from an object.
+Here x is not an object but a local variable. delete operators don’t affect local variables.
+
+Ques10-What will be the output of the following code?
+var x = { foo : 1};
+var output = (function(){
+    delete x.foo;
+    return x.foo;
+  })();
+  
+  console.log(output);
+Ans-The output would be undefined. The delete operator is used to delete the property of an object
+Here, x is an object which has the property foo,and as it is a self-invoking function,
+we will delete the foo property from object x. After doing so, when we try to reference a deleted property foo,
+the result isundefined.
+
+Ques11-What will be the output of the following code?
+var Employee = {
+  company: 'xyz'
+}
+var emp1 = Object.create(Employee);
+delete emp1.company
+console.log(emp1.company);
+
+Ans-The output would be xyz. Here, emp1 object has company as its prototype property. 
+The delete operator doesn’t delete prototype property.
+
+Ques12-Name the types of function with reason?
+function display()  
+{  
+  document.writeln("Named Function");  
+}  
+display();  
+var display=function()  
+{  
+document.writeln("Anonymous Function");  
+}  
+display(); 
+
+Ans-Here are the two types of function in JavaScript:
+1)Named:These types of functions have a name at the time of definition.
+2)Anonymous:These are the functions that doesn't contain any name
+,the name is declared dynamically at the runtime.
+
+Ques14-If we want to return the character from a specific index which method is used,
+explain with example?
+Ans-The Java String charAt(int index) method returns the character at the specified index in a string.
+The index value that we pass in this method should be between 0 and (length of string-1). 
+
+For example: s.charAt(0) would return the first character of the string represented by instance s.
+Java String charAt method throws IndexOutOfBoundsException,
+if the index value passed in the charAt() method is less than zero or greater than or 
+equal to the length of the string (index<0|| index>=length()).
+
+
+
+
